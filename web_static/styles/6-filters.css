@@ -1,119 +1,87 @@
-@charset "UTF-8";
-/** Holberton Practice Styles
- * ------ Filters
- */
-
-.container .filters {
-	height: 70px;
-	background-color: #FFFFFF;
+.filters {
 	width: 100%;
-	border: 1px solid #DDDDDD;
+	height: 70px;
+	background-color: white;
+	border: 1px solid #dddddd;
 	border-radius: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: stretch;
-	z-index: 2;
 	position: relative;
 }
 
-.container .filters .locations {
-	width: 25%;
-	border-right: 1px solid #DDDDDD;
-}
-
-.container .filters .amenities {
-	width: 25%;
-}
-
-.container .filters button {
+.filters button {
 	font-size: 18px;
-	background-color: #FF5A5F;
+	background-color: #ff5a5f;
+	color: #ffffff;
 	height: 48px;
 	width: 20%;
+	border-radius: 4px;
 	border: none;
-	border-radius: 4px;
-	margin: auto 30px auto auto;
+	float: right;
+	transform: translate(-25px, 12px);
 }
 
-.container .filters button:hover {
-	opacity: 0.9;
+button:hover {
+	opacity: 90%;
 }
 
-/**
- * ------ HEADERS
- */
-
-.container .filters h2 {
-	font-size: 16px;
-	margin: 10px 0 5px 0;
-}
-
-.container .filters h3 {
+.locations h3,
+.amenities h3 {
 	font-weight: 600;
-	margin: 12px 0 4px 40px;
+	margin: 20px 0 0 60px;
 }
-
-.container .filters h4 {
+.locations h4,
+.amenities h4 {
 	font-weight: 400;
-	font-size: 14px;
-	margin: 7px 0 3px 40px;
+	margin: 0 0 0 60px;
 }
 
-/**
- * ------ POPOVER
- */
-
-.container .filters .locations:hover .popover {
-	display: list-item;
+.locations {
+	height: 100%;
+	width: 25%;
+	position: absolute;
+	border-right: 1px solid #dddddd;
+}
+.amenities {
+	height: 100%;
+	width: 25%;
+	position: absolute;
+	left: 250px;
 }
 
-.container .filters .amenities:hover .popover {
-	display: list-item;
-}
-
-.container .filters .popover {
-	display: none;
-	list-style-type: none;
-	background-color: #FAFAFA;
-	border: 1px solid #DDDDDD;
+.popover {
+	background-color: #fafafa;
+	border: 1px solid #dddddd;
 	border-radius: 4px;
-	padding: 30px 40px 40px 30px;
-	margin: 15px -1px 0 -1px;
+	display: none;
+	margin-bottom: 30px;
+	padding: 0;
 }
 
-.container .filters .popover ul {
-	list-style-type: none;
-	padding-left: 20px;
+.popover > h2 {
+	font-size: 16px;
+	transform: translate(50px, 10px);
 }
 
-.container .filters .popover li {
-	margin: 5px 0 5px 0;
+.popover > li {
+	transform: translate(70px, 0);
+	list-style: none;
 }
 
-@media screen and (max-width: 600px) {
+.popover > li:last-child {
+	margin-bottom: 30px;
+}
 
-	.container .filters {
-		flex-direction: column;
-		height: auto;
-		width: 90%;
-		margin: auto;
-	}
+.locations:hover .popover {
+	display: block;
+	position: relative;
+	z-index: 9999;
+}
 
-	.container .filters .locations {
-		border-bottom: 1px solid #DDDDDD;
-	}
+.amenities:hover .popover {
+	display: block;
+	position: relative;
+	z-index: 9999;
+}
 
-	.container .filters .locations,
-	.container .filters .amenities {
-		width: 100%;
-		border-right: none;
-		border-bottom: 1px solid #DDDDDD;
-	}
-
-	.container .filters button {
-		width: 80%;
-		margin: 5px auto;
-	}
-
+.amenities .popover li:first-child {
+	margin-top: 30px;
 }
